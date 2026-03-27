@@ -1,9 +1,20 @@
 package com.example.demo.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import org.springframework.stereotype.Component;
+
+@Component
+@Entity
 public class Product {
+    @Id
     private int prodId;
     private String prodName;
     private int price;
+
+    public Product() {
+
+    }
 
     public int getPrice() {
         return price;
@@ -24,6 +35,7 @@ public class Product {
     public String getProdName() {
         return prodName;
     }
+
 
     public Product(int price, int prodId, String prodName) {
         this.price = price;
